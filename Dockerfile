@@ -1,7 +1,12 @@
-FROM ubuntu:20.04
+FROM golang:latest
 
-RUN apt-get update && apt-get install -y python3 python3-pip
-COPY script.py /app/script.py
+WORKDIR /app
 
-CMD ["python3", "/app/script.py"]
+COPY main.go .
+
+RUN go mod init main
+
+RUN go build -o main .
+
+CMD ["./main"]
 
