@@ -11,9 +11,9 @@ async def socket_call() -> None:
         try:
             while True:
                 result = await ws.recv()
-                print(result, end="")  # `end=''` removes extra newline
+                print(f'From socket: {result}', end="")  # `end=''` removes extra newline
         except ConnectionError as ce:
-            print("something happened")
+            print(f"Error: {ce}")
         except websockets.exceptions.ConnectionClosedOK as cco:
             print(f"Success: {cco}")
 
