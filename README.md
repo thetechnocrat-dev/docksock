@@ -1,4 +1,4 @@
-# longsock
+# DockSock
 testing Python WebSockets within Docker Containers
 
 ```
